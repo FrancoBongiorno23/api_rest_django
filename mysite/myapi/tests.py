@@ -1,5 +1,4 @@
 import json
-import unittest
 
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -13,20 +12,10 @@ from rest_framework.test import APITestCase
 
 class RegistrationTestCase(APITestCase):
 
-    def setUp(self):
-        self.data = data("nombre", "apellido", "correo")
-
     def test_registration(self):
         data = {"nombre": "ejemplo", "apellido": "ejemploapellido" ,
                 "correo": "correo@testing.com"}
         response=self.client.post("/lectores/", data)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED);
 
-    def fail_test_registration(self):
-        data = {"nombre": "", "apellido": "" ,
-                "correo": ""}
-        response=self.client.post("/libros/", data)
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST); 
-
-        
-#el error actualmente radica en que el metodo setUp importado de unittest no esta definido correctamente porque no poseo la variable con la cual quiero crear el metodo
+#el error radicaba en el endpoint donde me confundi el endpoint de /lectores/ con /libros/
