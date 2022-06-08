@@ -1,1 +1,4 @@
-pycache
+# Lista de archivos a ser ignorados en los commits
+P1
+__pycache__/
+*.py[cod]

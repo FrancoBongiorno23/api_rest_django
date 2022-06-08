@@ -48,7 +48,16 @@ class RegistrationTestCase(APITestCase):
         response=self.client.patch("/lectores/9/", data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        
-  
+class RegistrationTestCase2(APITestCase):
+
+    #def setUp(self):
+       # self.data = ("nombre", "apellido", "correo")
+
+    def test_correct_registration(self):
+        data = {"isbn":"11223345","titulo": "Martin Fierro","fechaLanzamiento":"2020-11-06","idioma":"espaniol","paginas":120,"descripcion":"El gaucho en La Pampa","peso":2}
+        response=self.client.post("/libros/", data)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+  #Esto no funka aca
 
 #el error actualmente radica en que el metodo setUp importado de unittest no esta definido correctamente porque no poseo la variable con la cual quiero crear el metodo

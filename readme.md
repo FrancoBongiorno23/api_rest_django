@@ -69,20 +69,8 @@
 	
 	
 
-NOTAS SOBRE TRABAJO HECHO CON POSTMAN:
 
 
-Primero y principal se intentó cargar la API en si, mediante la sección de "APIs" dentro del menú "Workspaces"
-
-Luego de que no nos permitiera cargar la misma mediante GITLAB con el siguiente mensaje de error 
-	"Unable to find any files to import. Double check your repository and branch."
-
-Luego intentamos directamente desde la URL luego de correr el servidor local el cual es "http://127.0.0.1:8000/"
-	Y da el siguiente error: "Cloud Agent Error: Can not send requests to localhost. Select a different agent."
-
-Ahora estamos aveiguando si es posible ejecutar desde el localhost el testing automatizado por postman o no lo es.
-
-Se aclara que se trabaja desde postman web
 	
 	
 
