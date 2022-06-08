@@ -1,4 +1,20 @@
 # Lista de archivos a ser ignorados en los commits
 P1
+
 __pycache__/
+
 *.py[cod]
+
+*.py[cod]
+
+*.log
+
+*.pot
+
+*.pyc
+
+*/*/*/__pycache__/
+
+*/*/__pycache__/
+
+*/__pycache__/

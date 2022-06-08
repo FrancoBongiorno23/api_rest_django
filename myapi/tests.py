@@ -42,7 +42,7 @@ class RegistrationTestCase(APITestCase):
         response=self.client.get("/lectores/100/", data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_patch(self):
+    def test_patch_not_found(self):
         data = {"nombre": "Max", "apellido": "Power" ,
                 "correo": "mevoy@actualizar.net"}
         response=self.client.patch("/lectores/9/", data)
