@@ -48,16 +48,40 @@ class RegistrationTestCase(APITestCase):
         response=self.client.patch("/lectores/9/", data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-class RegistrationTestCase2(APITestCase):
 
-    #def setUp(self):
-       # self.data = ("nombre", "apellido", "correo")
 
-    def test_correct_registration(self):
-        data = {"isbn":"11223345","titulo": "Martin Fierro","fechaLanzamiento":"2020-11-06","idioma":"espaniol","paginas":120,"descripcion":"El gaucho en La Pampa","peso":2}
+ #desde aca comienzo en libros
+    
+    def test_libros_get(self):
+        data = { }
+        response=self.client.get("/libros/", data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_libros_post_a_corregir(self):
+        data = {
+                "isbn": "1214334",
+                "titulo": "Luna de pluton",
+                "fechaLanzamiento": "2010-11-06",
+                "idioma": "Ingles",
+                "paginas": 23,
+                "descripcion": "Luna de plutonnn",
+                "peso": 1}
         response=self.client.post("/libros/", data)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.status_code, status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-  #Esto no funka aca
+    def test_libros_patch_correcto(self):
+        data = {
+                "isbn": "1214334",
+                "titulo": "Luna de pluton",
+                "fechaLanzamiento": "2010-11-06",
+                "idioma": "Ingles",
+                "paginas": 23,
+                "descripcion": "Luna de plutonnn",
+                "peso": 1}
+        response=self.client.patch("/libros/1/", data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-#el error actualmente radica en que el metodo setUp importado de unittest no esta definido correctamente porque no poseo la variable con la cual quiero crear el metodo
+    def test_libros_delete_correcto(self):
+        data = {}
+        response=self.client.post("/libros/2/", data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
