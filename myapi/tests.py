@@ -67,7 +67,7 @@ class RegistrationTestCase(APITestCase):
                 "descripcion": "Luna de plutonnn",
                 "peso": 1}
         response=self.client.post("/libros/", data)
-        self.assertEqual(response.status_code, status.HTTP_500_INTERNAL_SERVER_ERROR)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_libros_patch_correcto(self):
         data = {

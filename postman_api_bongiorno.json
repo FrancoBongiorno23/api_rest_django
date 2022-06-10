@@ -1,1 +1,248 @@
-{"info":{"_postman_id":"da5c8806-07be-4fce-9509-63f8ab2e653b","name":"API Nestor","schema":"https://schema.getpostman.com/json/collection/v2.0.0/collection.json"},"item":[{"name":"primer post Lectores","id":"f0cf2662-d75e-41b3-ae18-3762f0837049","request":{"method":"POST","header":[],"body":{"mode":"raw","raw":"{\r\n    \"nombre\": \"Postman\",\r\n    \"apellido\": \"Test Postman\",\r\n    \"correo\": \"post@man.com\"\r\n}","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/lectores/","description":"Primer post de la API"},"response":[]},{"name":"get Lectores","id":"b8c85ae7-e241-490e-bb77-677f512a0116","request":{"method":"GET","header":[],"url":{"raw":"http://127.0.0.1:8000/lectores/?2","protocol":"http","host":["127","0","0","1"],"port":"8000","path":["lectores",""],"query":[{"key":"2","value":null}]},"description":"test de get\r\n"},"response":[]},{"name":"prueba patch Lectores","id":"6018ef27-f9c7-45d6-96df-b4180abdfdce","request":{"method":"PATCH","header":[],"body":{"mode":"raw","raw":"    {\r\n        \"id\": 8,\r\n        \"nombre\": \"Testing Postman\",\r\n        \"apellido\": \"Parte dos\",\r\n        \"correo\": \"ya_fui@modificado.com\"\r\n    }","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/lectores/2/","description":"test campos vacios\r\n"},"response":[]},{"name":"post correctos Lectores","id":"67eaa9e8-2aaf-4f4a-b519-c88fd574c96f","request":{"method":"POST","header":[],"body":{"mode":"raw","raw":"    {\r\n        \"nombre\": \"Testing Postman\",\r\n        \"apellido\": \"Parte dos\",\r\n        \"correo\": \"esto_sera@modificado.com\"\r\n    }","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/lectores/","description":"Cargando casos a modificar"},"response":[]},{"name":"test a eliminar Lectores","id":"4a38955c-952d-4e84-805c-ec6dc84c3dac","request":{"method":"POST","header":[],"body":{"mode":"raw","raw":"    {\r\n        \"nombre\": \"Testing Postman\",\r\n        \"apellido\": \"A Eliminar\",\r\n        \"correo\": \"esto_sera@elimiado.com\"\r\n    }","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/lectores/"},"response":[]},{"name":"eliminando registro Lectores","id":"40906bfa-e29a-4857-b99e-ca63f672c3dc","request":{"method":"DELETE","header":[],"body":{"mode":"raw","raw":"","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/lectores/9/"},"response":[]},{"name":"Post Libros a corregir","id":"ac78787f-4eb3-4fd0-8d09-0c2b647ad0a1","request":{"method":"POST","header":[],"body":{"mode":"raw","raw":"{\"isbn\": \"11223345\",\"titulo\": \"Luna de pluton\",\"fechaLanzamiento\": \"2010-11-06\",\"idioma\": \"Ingles\",\"paginas\": 23,\r\n\"descripcion\": \"Luna de plutonnn\",\"peso\": 1}","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/libros/"},"response":[]},{"name":"Patch Libros OK","id":"9ad691ec-9cea-4d9d-b3b0-41fe8547fa17","request":{"method":"PATCH","header":[],"body":{"mode":"raw","raw":"{\r\n    \"id\": 2,\r\n    \"isbn\": \"11223345\",\r\n    \"titulo\": \"El perfume actualizado\",\r\n    \"fechaLanzamiento\": \"2020-11-23\",\r\n    \"idioma\": \"espanol\",\r\n    \"paginas\": 333,\r\n    \"descripcion\": \"muy buena obra\",\r\n    \"peso\": 2\r\n}","options":{"raw":{"language":"json"}}},"url":"http://127.0.0.1:8000/libros/2/"},"response":[]},{"name":"get Libros","id":"ea24be22-b829-4008-a984-6005888a00dc","request":{"method":"GET","header":[],"url":"http://127.0.0.1:8000/libros/"},"response":[]},{"name":"Delete Libros","id":"a1c07e35-976e-4aee-a10d-59b3337447bc","request":{"method":"DELETE","header":[],"url":"http://127.0.0.1:8000/libros/2/"},"response":[]}]}
+ 
+https://www.getpostman.com/collections/415b9cef0fd21f4196ea
+
+
+    info: {
+    _postman_id: "da5c8806-07be-4fce-9509-63f8ab2e653b",
+    name: "API Nestor",
+    schema: "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    item: [
+    {
+    name: "primer post Lectores",
+    id: "f0cf2662-d75e-41b3-ae18-3762f0837049",
+    request: {
+    method: "POST",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "{
+        "nombre": "Postman",
+        "apellido": "Test Postman",
+        "correo": "post@man.com"
+    }",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/lectores/",
+    description: "Primer post de la API"
+    },
+    response: [ ]
+    },
+    {
+    name: "get Lectores",
+    id: "b8c85ae7-e241-490e-bb77-677f512a0116",
+    request: {
+    method: "GET",
+    header: [ ],
+    url: {
+    raw: "http://127.0.0.1:8000/lectores/?2",
+    protocol: "http",
+    host: [
+    "127",
+    "0",
+    "0",
+    "1"
+    ],
+    port: "8000",
+    path: [
+    "lectores",
+    ""
+    ],
+    query: [
+    {
+    key: "2",
+    value: null
+    }
+    ]
+    },
+    description: "test de get
+    "
+    },
+    response: [ ]
+    },
+    {
+    name: "prueba patch Lectores",
+    id: "6018ef27-f9c7-45d6-96df-b4180abdfdce",
+    request: {
+    method: "PATCH",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "    {
+            "id": 8,
+            "nombre": "Testing Postman",
+            "apellido": "Parte dos",
+            "correo": "ya_fui@modificado.com"
+        }",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/lectores/2/",
+    description: "test campos vacios
+    "
+    },
+    response: [ ]
+    },
+    {
+    name: "post correctos Lectores",
+    id: "67eaa9e8-2aaf-4f4a-b519-c88fd574c96f",
+    request: {
+    method: "POST",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "    {
+            "nombre": "Testing Postman",
+            "apellido": "Parte dos",
+            "correo": "esto_sera@modificado.com"
+        }",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/lectores/",
+    description: "Cargando casos a modificar"
+    },
+    response: [ ]
+    },
+    {
+    name: "test a eliminar Lectores",
+    id: "4a38955c-952d-4e84-805c-ec6dc84c3dac",
+    request: {
+    method: "POST",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "    {
+            "nombre": "Testing Postman",
+            "apellido": "A Eliminar",
+            "correo": "esto_sera@elimiado.com"
+        }",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/lectores/"
+    },
+    response: [ ]
+    },
+    {
+    name: "eliminando registro Lectores",
+    id: "40906bfa-e29a-4857-b99e-ca63f672c3dc",
+    request: {
+    method: "DELETE",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/lectores/9/"
+    },
+    response: [ ]
+    },
+    {
+    name: "Post Libros",
+    id: "ac78787f-4eb3-4fd0-8d09-0c2b647ad0a1",
+    request: {
+    method: "POST",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "{"isbn": "11223345","titulo": "Luna de pluton","fechaLanzamiento": "2010-11-06","idioma": "Ingles","paginas": 23,
+    "descripcion": "Luna de plutonnn","peso": 1}",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/libros/"
+    },
+    response: [ ]
+    },
+    {
+    name: "Patch Libros OK",
+    id: "9ad691ec-9cea-4d9d-b3b0-41fe8547fa17",
+    request: {
+    method: "PATCH",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "{
+        "id": 2,
+        "isbn": "11223345",
+        "titulo": "El perfume actualizado",
+        "fechaLanzamiento": "2020-11-23",
+        "idioma": "espanol",
+        "paginas": 333,
+        "descripcion": "muy buena obra",
+        "peso": 2
+    }",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/libros/2/"
+    },
+    response: [ ]
+    },
+    {
+    name: "get Libros",
+    id: "ea24be22-b829-4008-a984-6005888a00dc",
+    request: {
+    method: "GET",
+    header: [ ],
+    url: "http://127.0.0.1:8000/libros/"
+    },
+    response: [ ]
+    },
+    {
+    name: "Delete Libros",
+    id: "a1c07e35-976e-4aee-a10d-59b3337447bc",
+    request: {
+    method: "DELETE",
+    header: [ ],
+    url: "http://127.0.0.1:8000/libros/2/"
+    },
+    response: [ ]
+    },
+    {
+    name: "Post 2 libros OK",
+    id: "42279161-e8da-4403-8694-3277f20f2024",
+    request: {
+    method: "POST",
+    header: [ ],
+    body: {
+    mode: "raw",
+    raw: "{"isbn": "11223345","titulo": "Luna de pluton","fechaLanzamiento": "2010-11-06","idioma": "Ingles","paginas": 23,
+    "descripcion": "Luna de plutonnn","peso": 1}",
+    options: {
+    raw: {
+    language: "json"
+    }
+    }
+    },
+    url: "http://127.0.0.1:8000/libros/"
+    },
+    response: [ ]
+    }
+    ]
+    }
