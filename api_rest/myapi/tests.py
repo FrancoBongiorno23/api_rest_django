@@ -85,4 +85,4 @@ class RegistrationTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         
-#testing git
+#testing git rama b
