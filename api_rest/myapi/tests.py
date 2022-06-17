@@ -85,10 +85,4 @@ class RegistrationTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         
-
-
-
-        
-  
-
-#el error actualmente radica en que el metodo setUp importado de unittest no esta definido correctamente porque no poseo la variable con la cual quiero crear el metodo
+#testing git
