@@ -48,9 +48,18 @@ class RegistrationTestCase(APITestCase):
         response=self.client.patch("/lectores/9/", data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
+    def test_patch_ok(self):
+        data = {"nombre": "Max", "apellido": "Power" ,
+                "correo": "mevoy@actualizar.net"}
+        response=self.client.patch("/lectores/2/", data)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
 
 
  #desde aca comienzo en libros
+
+    def setUp(self):
+        self.data = ("isbn", "titulo", "fechaLanzamiento", "idioma", "paginas", "descripcion", "peso")
     
     def test_libros_get(self):
         data = { }
@@ -69,7 +78,7 @@ class RegistrationTestCase(APITestCase):
         response=self.client.post("/libros/", data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-    def test_libros_patch_correcto(self):
+    """ def test_libros_patch_correcto(self):
         data = {
                 "isbn": "1214334",
                 "titulo": "Luna de pluton",
@@ -84,4 +93,4 @@ class RegistrationTestCase(APITestCase):
     def test_libros_delete_correcto(self):
         data = {}
         response=self.client.post("/libros/2/", data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)  """
