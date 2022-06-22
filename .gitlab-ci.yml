@@ -4,10 +4,11 @@ before_script:
   - python --version
 
 stages:
-  - analysis
   - test
 
 test:
   stage: test
   script:
     - py manage.py test
+
+    ##probamos testing solo mediante correr test
