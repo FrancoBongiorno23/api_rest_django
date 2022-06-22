@@ -11,8 +11,3 @@ test:
   stage: test
   script:
     - py manage.py test
-    - source -m venv/bin/activate
-    - pip install django
-    - py manage.py makemigrations
-    - py manage.py migrate
-    - py manage.py test
