@@ -1,4 +1,4 @@
-image: python:3.9.13-slim-buster
+image: python
 
 before_script:
   - python --version
