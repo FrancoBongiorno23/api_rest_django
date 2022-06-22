@@ -11,6 +11,7 @@ test:
   script:
     - python3 --version
     - pip install Django==4.0.5
+    - pip3 install djangorestframework
     - python manage.py test
 
     ##probamos testing solo mediante correr test
