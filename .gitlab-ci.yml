@@ -1,4 +1,4 @@
-image: python:1.10.4-python3
+image: python
 
 before_script:
   - python --version
