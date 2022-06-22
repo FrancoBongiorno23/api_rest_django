@@ -11,6 +11,6 @@ test:
   script:
     - python3 --version
     - pip install Django==4.0.5
-    - py manage.py test
+    - python manage.py test
 
     ##probamos testing solo mediante correr test
