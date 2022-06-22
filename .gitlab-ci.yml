@@ -1,4 +1,4 @@
-image: python:python3-onbuild
+image: python
 
 before_script:
   - python --version
