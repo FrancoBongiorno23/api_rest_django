@@ -1,4 +1,4 @@
-image: python
+image: python:1.10.4-python3
 
 before_script:
   - python --version
@@ -9,6 +9,7 @@ stages:
 test:
   stage: test
   script:
+    - python3 --version
     - py manage.py test
 
     ##probamos testing solo mediante correr test
