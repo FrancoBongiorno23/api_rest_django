@@ -11,7 +11,7 @@ from rest_framework import status
 # from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
 
-class RegistrationTestCase(APITestCase):
+class TestCasesLectores(APITestCase):
 
     def setUp(self):
         self.data = ("nombre", "apellido", "correo")
@@ -31,32 +31,21 @@ class RegistrationTestCase(APITestCase):
         self.assertEqual("This field may not be blank.", response.data["nombre"][0])
 
     def test_method_not_allowed(self):
-        data = {"id":"100" ,"nombre": "", "apellido": "" ,
+        data = {"nombre": "", "apellido": "" ,
                 "correo": ""}
         response=self.client.post("/lectores/100/", data)
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def test_get_notfound(self):
-        data = {"id":"100" ,"nombre": "", "apellido": "" ,
+        data = {"nombre": "", "apellido": "" ,
                 "correo": ""}
         response=self.client.get("/lectores/100/", data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-    def test_patch_not_found(self):
-        data = {"nombre": "Max", "apellido": "Power" ,
-                "correo": "mevoy@actualizar.net"}
-        response=self.client.patch("/lectores/9/", data)
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-    def test_patch_ok(self):
-        data = {"nombre": "Max", "apellido": "Power" ,
-                "correo": "mevoy@actualizar.net"}
-        response=self.client.patch("/lectores/2/", data)
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
+        self.assertEqual("N", response.data["detail"][0]) #el error 404 not found da como respuesta "N" al consultar el detalle del mismo
 
 
  #desde aca comienzo en libros
+class TestCasesLibros(APITestCase):
 
     def setUp(self):
         self.data = ("isbn", "titulo", "fechaLanzamiento", "idioma", "paginas", "descripcion", "peso")
@@ -77,20 +66,3 @@ class RegistrationTestCase(APITestCase):
                 "peso": 1}
         response=self.client.post("/libros/", data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-    """ def test_libros_patch_correcto(self):
-        data = {
-                "isbn": "1214334",
-                "titulo": "Luna de pluton",
-                "fechaLanzamiento": "2010-11-06",
-                "idioma": "Ingles",
-                "paginas": 23,
-                "descripcion": "Luna de plutonnn",
-                "peso": 1}
-        response=self.client.patch("/libros/1/", data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-    def test_libros_delete_correcto(self):
-        data = {}
-        response=self.client.post("/libros/2/", data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)  """
